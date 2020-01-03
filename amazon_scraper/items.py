@@ -19,4 +19,4 @@ class Mobile(scrapy.Item):
     description = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
-    
+

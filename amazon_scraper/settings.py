@@ -24,9 +24,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
-
-IMAGES_STORE = "./data/img"
+# ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+#
+# IMAGES_STORE = "./data/img"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -71,9 +71,17 @@ DOWNLOAD_DELAY = 3
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
+# ITEM_PIPELINES = {
 #    'amazon_scraper.pipelines.AmazonScraperPipeline': 300,
-#}
+# }
+
+# Configure item pipelines for data storage
+ITEM_PIPELINES = {'amazon_scraper.pipelines.AmazonScraperMongoPipeline': 300}
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "amazon"
+MONGODB_COLLECTION = "flower_dress"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
